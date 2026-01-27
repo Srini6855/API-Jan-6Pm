@@ -1,0 +1,100 @@
+Day - 1:
+------
+
+
+Front End: UI Testing
+
+	Front development is programming which focus on which the visual elements of a website or app that a user will interact with client side.  We can use web langauges such as HTML, CSS and JavaScript allows users to access and interact with the site.
+
+Back End: API Testing
+
+	Back end development focus on the side of a website users can't see - server side.
+
+DataBase:
+
+- Database is a data structure that stores organized information.
+- Database are used for storing, maintain and accesing any sort of data.
+- MySQL, MangoDB and Oracle database.
+
+API:
+
+	Application Programming Interface(API) is an interface or communication protocol between client and server.
+
+http request:
+
+- Hyper Text Transfer Protocol
+- Http works as request-response protocol between a client and server.
+- A client(browser) sends an HTTP rrequest to the server.
+- Sends and Http request in form of xml/json.
+
+
+http Response:
+
+	The client submits an HTTP request to the server and after internalizing the message, the server sends back a response. The response contains status information about the request.
+
+xml:
+
+- Extensibile Markup Language.
+- XML is platform independent language.
+
+json:
+
+- JavaScript Object Notation
+- JSon in platform independent language.
+
+- API helps as a bridge between client and server. It supports only xml/json and it is platform independent.
+
+API:
+
+- Application Programming Interface.
+- Client --- Server.
+- XML/JSON
+- Platform independent.
+
+
+
+
+********************************************************************************************
+
+Manual -> Postman
+Automation -> Rest Assured
+
+Soap API
+Rest API
+
+
+Chennai -> Rohini -> Official website -> H1
+                              API
+Rohini (Client) ---------------------------------------- (Database)-server H1 Block - Post(Create)
+Bookmyshow (Client) ------------------------------------- (Database)- Get
+Paytm
+Ticketnew
+
+-> 1. Status/response Code 
+-> 2. Response body
+
+Http Methods:
+
+1. Get
+2. Post
+3. Put
+4. Patch 
+5. Delete
+
+
+Status Code:
+
+-> 1xx series - 100 - 199 (Information)
+-> 2xx series - 200 - 299 (Success)
+-> 3xx series - 300 - 399 (Redirectional)
+-> 4xx series - 400 - 499 (Client side error) - 404
+-> 5xx series - 500 - 599 (Server side error)
+
+
+Response Body:
+
+{
+
+
+
+}
