@@ -98,3 +98,141 @@ Response Body:
 
 
 }
+
+**************************************************************************************************************************
+
+Day - 2
+
+Read Values from JSON:
+----------------------
+
+
+1. WHAT IS JSON?
+
+-> JSON stands for JavaScript Object Notation.
+-> It is a lightweight data format used to store and transfer data.
+-> In API testing, response body is mostly in JSON format.
+
+2. JSON STRUCTURE
+
+JSON = JSON Object + JSON Array
+
+3. JSON OBJECT: A JSON object is an unordered collection of key and value pairs.
+
+
+Rules:
+	- JSON object is enclosed within curly braces { }
+	- Key must be a String
+	- Keys must be unique
+	- Key cannot be null
+	- Value can be:
+	  - String
+	  - Number
+	  - Boolean
+	  - JSON Object
+	  - JSON Array
+
+
+Example – Simple JSON Object:
+
+{
+  "name": "Bala",
+  "email": "bala123@gmail.com",
+  "phoneNo": 8925811159,
+  "course": "java",
+  "payment": true
+}
+
+Explanation:
+	- "name" is key
+	- "Bala" is value
+	- Colon (:) separates key and value
+	- Comma (,) separates multiple pairs
+
+--------------------------------------------------------
+
+4. NESTED JSON OBJECT: When a JSON object contains another JSON object, it is called Nested JSON.
+
+Example:
+
+{
+  "name": "Bala",
+  "email": "bala123@gmail.com",
+  "phoneNo": 8925811159,
+  "address": {
+    "streetName": "AK Street",
+    "district": "Chennai",
+    "state": "Tamil Nadu"
+  }
+}
+
+
+Explanation:
+	- address is a key
+	- value of address is another JSON object
+
+--------------------------------------------------------
+
+5. JSON ARRAY: JSON Array represents an ordered list of values.
+
+Rules:
+	- JSON Array is enclosed within square brackets [ ]
+	- Values are separated by comma
+	- Index starts from 0
+	- It can store:
+	  - String
+	  - Number
+	  - Boolean
+	  - JSON Object
+
+Example:
+
+{
+  "name": "Bala",
+  "email": "bala123@gmail.com",
+  "phoneNo": 8925811159,
+  "course": ["java", "SQL", "API", "Selenium"]
+}
+
+--------------------------------------------------------
+
+6. DEPENDENCY USED
+
+json-simple dependency is used to read JSON in Java.
+
+<dependency>
+  <groupId>com.googlecode.json-simple</groupId>
+  <artifactId>json-simple</artifactId>
+  <version>1.1.1</version>
+</dependency>
+
+--------------------------------------------------------
+
+7. JSON FILE LOCATION
+
+Best practice:
+JSON test data should be stored inside:
+
+src/test/resources
+
+Example file:
+Employee.json
+
+--------------------------------------------------------
+
+8. SAMPLE JSON FILE (Employee.json)
+
+{
+  "name": "Bala",
+  "email": "bala123@gmail.com",
+  "phoneNo": 8925811159,
+  "course": "java",
+  "payment": true
+}
+
+--------------------------------------------------------
+
+
+
+
+
