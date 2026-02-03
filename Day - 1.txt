@@ -233,6 +233,147 @@ Employee.json
 --------------------------------------------------------
 
 
+**********************************************************************************************************************************************************
+
+Day - 3
+
+1. WAYS TO READ VALUES FROM JSON
+--------------------------------
+
+In API Testing, values can be read from JSON using:
+
+1. JSON Object / JSON Array (json-simple)
+2. Object Mapper (Jackson)
+3. POJO Class
+
+--------------------------------------------------------
+
+2. REST API – BASIC DEFINITION
+------------------------------
+
+REST API stands for Representational State Transfer.
+
+- It is an architectural style
+- Uses HTTP methods
+- Data is transferred mostly in JSON format
+
+--------------------------------------------------------
+
+3. HTTP METHODS
+---------------
+
+GET     → Read data
+POST    → Create data
+PUT     → Update complete data
+PATCH   → Update partial data
+DELETE  → Delete data
+
+--------------------------------------------------------
+
+4. OBJECT MAPPER (IMPORTANT)
+----------------------------
+
+Object Mapper is used to:
+
+- Convert JSON → Java Object (Deserialization)
+- Convert Java Object → JSON (Serialization)
+
+We use Jackson library for Object Mapper.
+
+--------------------------------------------------------
+
+5. DEPENDENCY REQUIRED
+----------------------
+
+Jackson Databind Dependency:
+
+<dependency>
+  <groupId>com.fasterxml.jackson.core</groupId>
+  <artifactId>jackson-databind</artifactId>
+  <version>2.15.2</version>
+</dependency>
+
+--------------------------------------------------------
+
+6. SAMPLE JSON FILE (Employee.json)
+-----------------------------------
+
+{
+  "name": "Bala",
+  "email": "bala123@gmail.com",
+  "phoneNo": 8925811159,
+  "course": "Java",
+  "payment": true
+}
+
+--------------------------------------------------------
+
+7. POJO CLASS
+-------------
+
+POJO stands for Plain Old Java Object.
+
+Rules:
+- Class should be public
+- Variables should be private
+- Must have getters and setters
+	-> Right click in class -> Go to source -> Click generate getters and setters -> Click select all and click generate
+
+--------------------------------------------------------
+POJO CLASS – Employee.java
+
+public class Employee {
+
+    private String name;
+    private String email;
+    private long phoneNo;
+    private String course;
+    private boolean payment;
+
+    public Employee() {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public long getPhoneNo() {
+        return phoneNo;
+    }
+
+    public void setPhoneNo(long phoneNo) {
+        this.phoneNo = phoneNo;
+    }
+
+    public String getCourse() {
+        return course;
+    }
+
+    public void setCourse(String course) {
+        this.course = course;
+    }
+
+    public boolean isPayment() {
+        return payment;
+    }
+
+    public void setPayment(boolean payment) {
+        this.payment = payment;
+    }
+}
+
 
 
 
