@@ -1,10 +1,10 @@
 {
-	"name": "Bala",
-	"email": "bala123@gmail.com",
-	"phoneNo": 8925811159,
+	"name": null,
+	"email": null,
+	"phoneNo": 0,
 	"address": {
-		"streetName": "AK Street",
-		"district": "Chennai",
-		"state": "Tamil Nadu"
+		"streetName": null,
+		"district": "Coimbatore",
+		"state": null
 	}
 }
