@@ -374,6 +374,159 @@ public class Employee {
     }
 }
 
+****************************************************************************************************************************************************
+
+Feb 09
+------
+
+POSTMAN – PM SCRIPTS & VARIABLES 
+================================
+
+1. WHAT IS PM SCRIPT?
+--------------------
+
+pm is a Postman JavaScript object.
+pm scripts are written inside the Tests tab
+to validate response and extract values.
+
+Used for:
+- Validations
+- Extracting values
+- Storing values in variables
+- Chaining API requests
+
+--------------------------------------------------------
+
+2. TYPES OF VARIABLES IN POSTMAN
+--------------------------------
+
+1. Global Variable
+   - Available across all collections and requests
+
+2. Environment Variable
+   - Available only for selected environment
+   - Recommended for real projects
+
+3. Collection Variable
+   - Available only within the collection
+
+--------------------------------------------------------
+
+3. RESPONSE BODY SAMPLE (CREATE FLIGHT)
+---------------------------------------
+
+{
+    "message": "Flight Created Successfully",
+    "data": {
+        "id": 47875,
+        "flightName": "AirIndia",
+        "Country": "India",
+        "Destinations": "87",
+        "URL": "https://en.wikipedia.org/wiki/Air_India",
+        "Created_date": "2025-05-12 13:11:48"
+    }
+}
+
+
+
+========================================================
+POSTMAN – GETTING DATA FROM CSV FILE
+(DATA DRIVEN TESTING)
+========================================================
+
+1. WHAT IS DATA DRIVEN TESTING?
+------------------------------
+
+Data Driven Testing means running the same API request
+multiple times with different test data.
+
+Postman supports data driven testing using:
+- CSV files
+- JSON files
+
+--------------------------------------------------------
+
+2. WHY USE CSV FILE IN POSTMAN?
+-------------------------------
+
+- Avoid hardcoding values
+- Run multiple test cases
+- Easy to maintain test data
+- Real-time project usage
+
+--------------------------------------------------------
+
+3. SAMPLE CSV FILE
+------------------
+
+File Name:
+flightData.csv
+
+Content:
+
+flightName,Country,Destinations,URL
+AirIndia,India,87,https://en.wikipedia.org/wiki/Air_India
+Indigo,India,65,https://en.wikipedia.org/wiki/IndiGo
+Emirates,UAE,120,https://en.wikipedia.org/wiki/Emirates
+
+Important Notes:
+- First row must be header
+- Headers act as variable names
+- Values separated by comma
+
+--------------------------------------------------------
+
+4. HOW TO USE CSV VARIABLES IN POSTMAN
+--------------------------------------
+
+Syntax:
+{{columnName}}
+
+Example:
+{{flightName}}
+{{Country}}
+{{Destinations}}
+{{URL}}
+
+--------------------------------------------------------
+
+5. SAMPLE REQUEST USING CSV DATA
+--------------------------------
+
+HTTP Method:
+POST
+
+Endpoint:
+https://www.omrbranch.com/api/flights
+
+Headers:
+Content-Type: application/json
+
+Request Body:
+{
+  "flightName": "{{flightName}}",
+  "Country": "{{Country}}",
+  "Destinations": "{{Destinations}}",
+  "URL": "{{URL}}"
+}
+
+--------------------------------------------------------
+
+6. RUN CSV FILE USING COLLECTION RUNNER
+---------------------------------------
+
+Steps:
+1. Save request inside a collection
+2. Click Collection → Run
+3. Select Collection Runner
+4. Choose CSV file (flightData.csv)
+5. Click Run
+
+Result:
+- Request runs once per CSV row
+- 3 rows → 3 API calls
+
+==========================
 
 
 
