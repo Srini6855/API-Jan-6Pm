@@ -7,9 +7,11 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 public class DayOne {
-	public static void main(String[] args) {
+	RequestSpecification req;
+	int id;
 
-		RequestSpecification req;
+	public void createFlight() {
+
 		// Post request - Flight Creation
 		// Input
 		// 1. endpoints
@@ -56,10 +58,38 @@ public class DayOne {
 
 		System.out.println(message);
 
-		int id = as.getData().getId();
+		id = as.getData().getId();
 
 		System.out.println(id);
+	}
 
+	public void updateFlight() {
+		req = RestAssured.given().header("Content-Type", "application/json");
+		req = req.body("{\r\n" + "    \"flightName\": \"AirAsia\",\r\n" + "    \"Country\": \"India\",\r\n"
+				+ "    \"Destinations\": 67,\r\n"
+				+ "    \"URL\": \"https:\\/\\/en.wikipedia.org\\/wiki\\/Air_India\"\r\n" + "}");
+		Response response = req.put("https://www.omrbranch.com/api/flight/" + id);
+		int statusCode = response.getStatusCode();
+
+		System.out.println("Status code : " + statusCode);
+
+		// Response body
+		String asString = response.asString();
+
+		// Response body in readable format
+
+		String asPrettyString = response.asPrettyString();
+
+		System.out.println(asString);
+
+		System.out.println(asPrettyString);
+
+	}
+
+	public static void main(String[] args) {
+		DayOne dayOne = new DayOne();
+		dayOne.createFlight();
+		dayOne.updateFlight();
 	}
 
 }
