@@ -529,4 +529,101 @@ Result:
 ==========================
 
 
+CRUD Operation:
+---------------
+
+HTTP Methods:
+-------------
+
+o GET: Used for retrieve the resources from the server.
+o POST: Used for create a new resource in the server.
+o PUT: Used for update the resource in the server, if the resource is not there, it will create a new resource in the server.
+o PATCH: Used to update the partial resource in the server.
+o DELETE: Used to delete the resource in the server.
+
+	Note: For get and delete, we not needed to pass the payload and for other methods we need to pass the payload.
+
+
+
+Parameters:
+-----------
+
+
+- The term "parameter in API" refers to a value sent to an API (Application Programming Interface) to specify or modify a request. Parameters help customize the behavior of an API call and are essential for interacting with APIs effectively.
+
+Types of Parameter:
+-------------------
+
+1. Path Parameter
+2. Query Parameter
+
+Path Parameter:
+---------------
+
+ Used to identify a specific resource in the URL.
+ Passed in a URL after slash /
+ E.g.: https://api.example.com/users/123
+ Here, 123 is a Path Parameter, specifying the user ID.
+
+Query Parameter:
+----------------
+
+ Used to filter, sort, or modify a request.
+ Passed in the URL after a ? Question mark.
+ Eg: GET https://api.example.com/users?age=25&gender=male.
+ Here, age=25 and gender=male is Query Parameters, used to filter results.
+
+
+Authentication:
+---------------
+
+ Control access to resources.
+ Verifying identity (Who are you?).
+ Confirms that a user/system is valid.
+ We have methods like - Passwords, API keys, OAuth1 & 2, JWT, Basic.
+
+Authorization:
+--------------
+
+ Decides what you can access.
+ I have been using Bearer JWT token as a Authorization.
+
+Status Code:
+------------
+
+o 100 – Series //information
+
+	 100 Continue: The server has received the request headers and the client should proceed with the request body.
+	 101 Switching Protocols: The server is switching to a different protocol as requested by the client.
+
+o 200 – Series //Successful
+
+	 200 OK: The request succeeded. The response body contains the requested resource.
+	 201 Created: A new resource has been successfully created (e.g., after a POST request).
+	 202 Accepted: The request has been accepted for processing, but the processing is not complete.
+	 204 No Content: The request was successful, but there is no content to return.
+
+o 300 – Series //Redirectional
+
+	 301 Moved Permanently: The requested resource has been moved to a new URL permanently.
+	 302 Found: The requested resource is temporarily located at a different URL.
+	 304 Not Modified: Indicates that the resource has not changed since the last request (used for caching).
+
+o 400 – Series //Client side error
+
+	 400 Bad Request: The server cannot process the request due to a client-side error (e.g., invalid input).
+	 401 Unauthorized: Authentication is required but not provided or is invalid.
+	 403 Forbidden: The client is authenticated but does not have permission to access the resource.
+	 404 Not Found: The requested resource could not be found on the server.
+	 405 Method Not Allowed: The HTTP method (e.g., GET, POST) is not allowed for the requested resource.
+	 409 Conflict: There is a conflict with the current state of the resource (e.g., duplicate data).
+	 429 Too Many Requests: Client has sent too many requests in a given amount of time
+
+o 500 – Series // Server side error
+
+	 500 Internal Server Error: The server encountered an unexpected condition that prevented it from fulfilling the request.
+	 501 Not Implemented: The server does not support the functionality required to fulfil the request.
+	 502 Bad Gateway: The server received an invalid response from an upstream server.
+	 503 Service Unavailable: The server is temporarily unable to handle the request due to maintenance or overload.
+	 504 Gateway Timeout: The server did not receive a timely response from an upstream server.
 
